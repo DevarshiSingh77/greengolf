@@ -1,0 +1,380 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #fff;
+
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+#cursor{
+    height: 20px;
+    width: 20px;
+    background-color: rgba(122, 197, 10, 0.927);
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+}
+#cursor-blur{
+    height: 300px;
+    width: 300px;
+    background-color: rgba(122, 197, 10, 0.292);
+    border-radius: 50%;
+    position: fixed;
+    filter: blur(50px);
+    z-index: 9;
+    
+
+}
+#nav{
+    height: 145px;
+    width: 100%;
+    display: flex;
+    padding: 0 150px;
+    align-items: center;
+    gap: 50px;
+    position: fixed;
+    justify-content: flex-start;
+    z-index: 99;
+}
+#nav img{
+    height: 75px;
+}
+video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+}
+#main{
+    position: relative;
+    background-color: rgba(0,0,0,0.37);
+
+}
+#page1{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    
+    z-index: 10;
+    
+}
+#page1 h1{
+    font-size: 140px;
+    font-weight: 900;
+    position: relative;
+}
+#page1 h1::before{
+    content: "EAT.DRINK.PLAY";
+    position: absolute;
+    color: black;
+    top: -5px;
+    left: -5px;
+    -webkit-text-stroke: 1px rgba(122, 197, 10, 0.927);
+    z-index: -1;
+}
+#page1 h2{
+    font-size: 30px;
+    font-weight: 800;
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+}
+#page1 p{
+    font-size: 20px;
+    font-weight: 500;
+    width: 40%;  
+}
+#page2{
+    height: 35vh;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+#scroller{
+   
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+    
+}
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+#scroller-in-1{
+    display: inline-block;
+    white-space: nowrap;
+}
+#scroller-in-1{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+#scroller h4{
+    display: inline-block;
+    font-size: 100px;
+    font-weight: 900;
+    font-family: gilroy;
+    margin-right: 10px;
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(122, 197, 10, 0.927) ;
+ 
+}
+#scroller h4:hover{
+    color: rgba(122, 197, 10, 0.927);
+}
+@keyframes scroll{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+#about{
+    height: 60vh;
+    width: 100%;
+    
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 10;
+}
+#about img{
+    height: 220px;
+    width: 220px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+#about-us {
+    width: 40%;
+    text-align: center;
+}
+#about-us h3{
+    font-size: 54px;
+    font-weight: 900;
+    margin-bottom: 40px;
+
+}
+#about-us p{
+    font-size: 20px;
+    line-height: 26px;;
+}
+#carts{
+    
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+}
+.card{
+    height: 80%;
+    width: 22%;;
+    
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+    transition: all ease 0.6;
+}
+#card1{
+    background-image: url(https://cdn.geekwire.com/wp-content/uploads/2018/04/IMG_20180412_124947.jpg);
+    position: relative;
+}
+#card2{
+    background-image: url(https://images.pexels.com/photos/1325745/pexels-photo-1325745.jpeg?auto=compress&cs=tinysrgb&w=600);
+}
+#card3{
+    background-image: url(https://media.istockphoto.com/id/1496362093/photo/golf-lesson-teaching-and-sports-coach-help-man-with-swing-putt-and-stroke-outdoor-lens-flare.jpg?s=612x612&w=0&k=20&c=8Gvn9NjErd9VRjKxul8YxDuyViAqkaVRN7oS0H4yX2Y=);
+}
+.overlay{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(122, 197, 10, 0.927) ;
+    padding-top: 130px;
+    position: relative;
+    opacity: 0;
+    transition: all ease 0.6;
+}
+.overlay h4{
+    color: black;
+    font-size: 28px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+.overlay p{
+    color: black;
+}
+.card:hover .overlay{
+    opacity: 1;
+}
+#card1:hover{
+    transform: rotate3d(-1,1,0,20deg);
+}
+#card2:hover{
+    transform: rotate3d(1,1,0,20deg);
+}
+#card3:hover{
+    transform: rotate3d(-1,1,0,20deg);
+}
+#green{
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to left bottom,rgba(122, 197, 10, 0.927),rgba(202, 247, 135, 0.927))  ;
+
+}
+#green h4{
+    width: 50%;
+    font-size: 27px;
+    line-height: 50px;
+    color: black;
+    text-transform: uppercase;
+    text-align: center;
+}
+#green img{
+    height: 100%;
+    object-fit: cover;
+    width: 14%;
+}
+#page3{
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+#page3>p{
+    font-size: 35px;
+    width: 60%;
+    text-align: center;
+    font-weight: 800;
+    line-height: 45px;
+}
+#page3 img{
+    position: absolute;
+    height: 60px;
+}
+#page3 #col1{
+    left: 15%;
+    top: 25%;
+}
+#page3 #col2{
+    bottom: 30%;
+    right: 15%;
+
+}
+#footer{
+    height: 50vh;
+    width: 100%;
+    
+    background: linear-gradient(to left bottom,rgba(122, 197, 10, 0.927),rgba(202, 247, 135, 0.927));
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+#fir  {
+    height: 97%;
+    width: 20%;
+    
+    
+    
+    z-index: 10;
+    position: relative;
+    
+}
+#fir #nor{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    
+}
+#fa img {
+    height: 100%;
+    width: 25px;
+    
+}
+#sec{
+    
+    height: 50%;
+    width: 25%;  
+    gap: 50px;
+    position: relative;
+    
+    
+    
+}
+#sec h4{
+    font-size: 25px;
+    font-weight: 700;
+    color: black;
+    text-align: left;
+    line-height: 150%;
+    
+}
+#thi{
+    height: 50%;
+    width: 25%;  
+    gap: 50px;
+    position: relative;
+
+}
+#thi h4{
+    font-size: 25px;
+    font-weight: 700;
+    color: black;
+    text-align: left;
+    line-height: 150%;
+}
+#for{
+    height: 50%;
+    width: 25%;  
+    gap: 50px;
+    position: relative;
+
+}
+#for h5{
+    font-size: 15px;
+    font-weight: 700;
+    color: black;
+    text-align: left;
+    line-height: 150%;}
+    #for #hy{
+        font-size: 20px;
+        color: white;
+        font-weight: 900;
+    }
+
+
+
+
+
+
+
